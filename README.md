@@ -3,14 +3,14 @@ Before I describe the details of the code, I want to share my thoughts on the ta
 
 ## Data 
 To train the model, we need data, of course. For obvious reasons, we won't be given real data for this task, so we need to generate training data. Since we will be dealing with the identification of handwritten characters, we can use the EMNIST dataset. The description of this dataset can be found at reference https://www.tensorflow.org/datasets/catalog/emnist .
-To use the EMNIST dataset, you do not need to:
-Download the dataset here [here](https://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip)
-From inside the gzip folder, extract the following .gz files :
-- emnist-byclass-train-images-idx3-ubyte.gz
-- emnist-byclass-train-labels-idx1-ubyte.gz
-- emnist-byclass-test-images-idx3-ubyte.gz
-- emnist-byclass-test-labels-idx1-ubyte.gz
-If we briefly describe why emnist-byclass is used, then 333333
+To use the EMNIST dataset, we need to:
+- Download the dataset here [here](https://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip)
+- From inside the gzip folder, extract the following .gz files :
+  - emnist-byclass-train-images-idx3-ubyte.gz
+  - emnist-byclass-train-labels-idx1-ubyte.gz
+  - emnist-byclass-test-images-idx3-ubyte.gz
+  - emnist-byclass-test-labels-idx1-ubyte.gz
+To briefly describe why emnist-byclass, the dataset contains handwritten characters that are more representative of real-world scenarios than computer-generated or printed characters. This makes the dataset more suitable for tasks involving handwriting recognition and synthesis.
 P.S Most likely, the first hint is related to data generation. I will not take the 2nd and 3rd hints, because I will lose conditional points for taking the first hint, which I do not need.
 
 ## Model.
