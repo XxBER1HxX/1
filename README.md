@@ -26,19 +26,19 @@ val_split = 0.2
 batch_size = 200
 
 The model is defined as a sequential model using `tf.keras.models.Sequential()`.
-  It consists of several layers:
-    - The first layer is a 2D convolutional layer (`Conv2D`) with 64 filters, a kernel size of 3x3, and ReLU activation. It takes the input shape of (28, 28, 1)
-    - Next, a max-pooling layer (`MaxPool2D`) with a pool size of 2x2 is added to downsample the feature maps.
-    - A dropout layer (`Dropout`) is included to prevent overfitting by randomly setting a fraction of input units to 0 during training.
-    - The feature maps are then flattened into a 1D vector using the flatten layer (`Flatten`).
-    - Two fully connected dense layers (`Dense`) follow: the first layer has 256 units with ReLU activation, and the last layer has 62 units (corresponding to the number of classes in EMNIST) with softmax activation for multi-class classification.
+ - It consists of several layers:
+  - The first layer is a 2D convolutional layer (`Conv2D`) with 64 filters, a kernel size of 3x3, and ReLU activation. It takes the input shape of (28, 28, 1)
+  - Next, a max-pooling layer (`MaxPool2D`) with a pool size of 2x2 is added to downsample the feature maps.
+  - A dropout layer (`Dropout`) is included to prevent overfitting by randomly setting a fraction of input units to 0 during training.
+  - The feature maps are then flattened into a 1D vector using the flatten layer (`Flatten`).
+  - Two fully connected dense layers (`Dense`) follow: the first layer has 256 units with ReLU activation, and the last layer has 62 units (corresponding to the number of classes in EMNIST) with softmax activation for multi-class classification.
 
-Compilation and Training:
-   - The model is compiled using the Adam optimizer with a specified learning rate.
-   - The loss function is set to "sparse_categorical_crossentropy" since the labels are provided as integers.
-   - The metric used to evaluate the model during training is accuracy.
-   - The training and validation datasets are converted into TensorFlow datasets using `tf.data.Dataset.from_tensor_slices()` and batched.
-   - The model is trained using the `fit` function, specifying the training and validation datasets, the number of epochs, and the number of workers for parallel processing.
+ - Compilation and Training:
+  - The model is compiled using the Adam optimizer with a specified learning rate.
+  - The loss function is set to "sparse_categorical_crossentropy" since the labels are provided as integers.
+  - The metric used to evaluate the model during training is accuracy.
+  - The training and validation datasets are converted into TensorFlow datasets using `tf.data.Dataset.from_tensor_slices()` and batched.
+  - The model is trained using the `fit` function, specifying the training and validation datasets, the number of epochs, and the number of workers for parallel processing.
 
 ## Result
 The training results indicate that the model achieved a loss of 0.3345 and an accuracy of 0.8734 on the training data after 10 epochs. Additionally, on the validation data, the model achieved a validation loss of 0.4207 and a validation accuracy of 0.8520.
